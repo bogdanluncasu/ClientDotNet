@@ -1,0 +1,31 @@
+﻿@model ICollection<ClientExpandableObjectRecogniser.Models.ObjectModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Objects</h2>
+
+
+<div>
+    @Html.ActionLink("Add object", "Add")
+    <hr />
+    <table class="table">
+        @{var i=1;}
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>
+                    @i
+                </td>
+                <td >
+                    @Html.DisplayFor(model => obj.Label)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete Object", "Delete", new { id = obj.Id })
+                </td>
+            </tr>
+            i += 1;
+        }
+    </table>
+</div>

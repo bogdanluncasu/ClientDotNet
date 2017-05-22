@@ -1,0 +1,38 @@
+﻿@model ClientExpandableObjectRecogniser.Models.UserModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<header>
+    <h1>Register</h1>
+</header>
+
+<div id="form">
+
+@using (Html.BeginForm("RegisterAccount","UserAccount"))
+{
+    <div class="editor-label">
+        @Html.LabelFor(m => m.username)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.username, new { htmlAttributes = new { @class = "form-control", placeholder = "Username" } })
+        @Html.ValidationMessageFor(m => m.username,null,new { @class = "text-danger" })
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(m => m.email)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+        @Html.ValidationMessageFor(m => m.email, null, new { @class = "text-danger" })
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(m => m.password)
+    </div>
+    <div class="editor-field">
+        @Html.PasswordFor(model => model.password, new {@class="form-control", placeholder="Password"})
+        @Html.ValidationMessageFor(m => m.password, null, new { @class = "text-danger" })
+    </div>
+    <button type="submit">Register</button>
+}
+</div>
+

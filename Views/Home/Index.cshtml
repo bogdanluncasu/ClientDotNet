@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Get Recognized";
+}
+<style>
+    .filecontainer {
+        margin-top:2%;
+        border:3px dashed black;
+        padding:1px 1px 1px 1px;
+        
+    }
+    .containerbutton{
+        margin-top:2%;
+    }
+    #imagefile{
+        margin-right:auto;
+        margin-left:auto;
+        margin-top:5%;
+        margin-bottom:5%;
+    }
+    #recognise{
+        margin-right:auto;
+        margin-left:auto;
+    }
+    #imagecontainer{
+        width:58%;
+        overflow: auto;
+        display:inline-block;
+    }
+    #labelimage{
+        width:50%;
+        padding-bottom:5%;
+        text-align:center;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #objects{
+        padding-top:5%;
+    }
+    #imageinfo{
+        float:right;
+        width:39%;
+        display:inline-block;
+    }
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<div class="filecontainer">
+    <input type="file" id="imagefile" />
+</div>
+<div class="containerbutton">
+    <input type="button" class="btn-success" value="Recognize" id="recognise" />
+</div>
+
+<div class="filecontainer" >
+    <div id="imagecontainer">
+        <img src="" id="imagesource"/>
+    </div>
+    <div id="imageinfo">
+        <div id="labelimage">
+            <span id="labelinfo"/>
+        </div>
+        <div id="objects">
+        </div>
+    </div>
+</div>
+<script src="~/js/recogniser.js"></script>

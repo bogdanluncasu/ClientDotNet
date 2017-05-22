@@ -1,0 +1,33 @@
+﻿@model ICollection<ClientExpandableObjectRecogniser.Models.KeyModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Developer Keys</h2>
+
+
+<div>
+    @Html.ActionLink("Generate a new key", "Generate")
+    <strong>!!!Max 5 keys limit!!!</strong>
+    <hr />
+    <table class="table">
+        @{var i = 1;}
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>
+                    @i
+                </td>
+                <td>
+                    @Html.DisplayFor(model => obj.key)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete key", "Delete", new { id = obj.id })
+                </td>
+            </tr>
+            i += 1;
+        }
+    </table>
+</div>
+
