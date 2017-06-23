@@ -77,8 +77,8 @@ var readfile = function () {
 };
 
 
-$("#recognise").click(function () {
-
+$("#recognise").click(function (e) {
+	e.stopPropagation();
     console.log("Recognise pressed");
     readfile();
 });
