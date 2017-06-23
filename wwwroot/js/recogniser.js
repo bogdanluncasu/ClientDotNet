@@ -78,7 +78,11 @@ var readfile = function () {
 
 
 $("#recognise").click(function (e) {
-	e.stopPropagation();
+	
     console.log("Recognise pressed");
-    readfile();
+	try{
+		readfile();
+	}catch(err){
+		alert("File size is too big.")
+	}
 });
