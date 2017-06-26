@@ -22,8 +22,10 @@ var readfile = function (token) {
 
         var arrayBuffer = this.result,
 		array = new Uint8Array(arrayBuffer),
-		binaryString = String.fromCharCode.apply(null, array);
-        binaryString = btoa(binaryString)
+        binaryString = "";
+        for (i=0;i<array.length;i+=3)
+            binaryString += String.fromCharCode.apply(null, array.slice(i, i + 3));
+		binaryString = btoa(binaryString);
         $.ajax({
             url: "/Objects/Add",
             type: "POST",
